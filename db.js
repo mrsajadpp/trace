@@ -1,5 +1,5 @@
 const mongoose = require('mongoose') 
-const url = 'mongodb+srv://mrsajadpp:sajadpp310410@cluster0.mqncckt.mongodb.net/?retryWrites=true&w=majority';
+const url = process.env.URL;
 const MongoClient = require('mongodb').MongoClient;
 
   const connectionParams = { 
