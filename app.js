@@ -1,11 +1,14 @@
 var createError = require('http-errors');
 var express = require('express');
-var { engine, create } = require('express-handlebars');
+var { engine } = require('express-handlebars');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var favicon = require('serve-favicon');
-const listen = require('./server');
+var codes = require('./redirect/url.js');
+var { insertDb, collDb, findDb } = require('./db.js');
+
+console.log('Server started!');
 
 var indexRouter = require('./routes/index');
 var devRouter = require('./routes/dev');
@@ -13,6 +16,7 @@ var aboutRouter = require('./routes/about');
 var qrRouter = require('./routes/qr');
 var shortRouter = require('./routes/short');
 var shortingRouter = require('./routes/shorting');
+var runRouter = require('./routes/run');
 var screenRouter = require('./routes/screen');
 var robotRouter = require('./routes/robots');
 
@@ -38,6 +42,11 @@ app.use('/short', shortRouter);
 app.use('/shorting', shortingRouter);
 app.use('/screen', screenRouter);
 app.use('/robots.txt', robotRouter);
+app.use('/', runRouter);
+/*exports.runner =  function runner(number){
+  console.log(number);
+  
+}*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
