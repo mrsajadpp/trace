@@ -9,10 +9,14 @@ router.post('/', function(req, res, next) {
     res.render('shorted', { title: 'Url shorter - Trace', description: 'Short you long url to small.', num: number });
   }
   let url = req.body.url;
-  if (url.startsWith('http')) {
-    rand(url, out);
+  if (!url) {
+    res.render('short', { title: 'Url shorter - Trace', description: 'Short you long url to small.'});
   } else {
-    rand('https://'+url, out);
+    if (url.startsWith('http')) {
+       rand(url, out);
+    } else {
+       rand('https://'+url, out);
+    }
   }
 });
 
