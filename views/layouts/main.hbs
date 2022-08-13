@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{description}}">
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+    <!--Header-->
+    <div class="header">
+    <div class="hl">
+      <button id="menu" onclick="menu();" type="submit">
+        <span id="menuIcon" class="bx bx-menu-alt-left"></span>
+      </button>
+    </div>
+    <div class="hc">
+      <div class="logo">
+        <img src="/images/hlogo.png" />
+      </div>
+    </div>
+    <div class="hr">
+      
+    </div>
+ </div>
+ <!--Menu bar-->
+ <div id="menuBar" class="menu-bar hide">
+    <div class="options">
+      <button id="home" onclick="var url = '/'; load(url, this.id);" class="option th" type="submit">
+        <div class="icon">
+          <span class="bx bxs-home"></span>
+        </div>
+        <div class="text">
+          <span>Home</span>
+        </div>
+      </button>
+      <button id="shorter" onclick="let url = '/short'; load(url, this.id);" class="option" type="submit">
+        <div class="icon">
+          <span class="bx bx-cut"></span>
+        </div>
+        <div class="text">
+          <span>Url shorter</span>
+        </div>
+      </button>
+      <button id="qr" onclick="var url = '/qr'; load(url, this.id);" class="option" type="submit">
+        <div class="icon">
+          <span class="bx bx-qr"></span>
+        </div>
+        <div class="text">
+          <span>Qr generator</span>
+        </div>
+      </button>
+      <button id="capture" onclick="var url = '/screen'; load(url, this.id);" class="option" type="submit">
+        <div class="icon">
+          <span class="bx bx-screenshot"></span>
+        </div>
+        <div class="text">
+          <span>Capture web</span>
+        </div>
+      </button>
+      <button id="dev" onclick="var url = '/dev'; load(url, this.id);" class="option" type="submit">
+        <div class="icon">
+          <span class="bx bx-code-alt"></span>
+        </div>
+        <div class="text">
+          <span>Developer</span>
+        </div>
+      </button>
+      <button id="about" onclick="let url = '/about'; load(url, this.id);" class="option" type="submit">
+        <div class="icon">
+          <span class="bx bx-info-circle"></span>
+        </div>
+        <div class="text">
+          <span>About</span>
+        </div>
+      </button>
+    </div>
+  </div>
+ <!--Body-->
+ {{{body}}}
+ <script src="/javascripts/script.js"></script>
+ <script src="/javascripts/main.js"></script>
+  </body>
+</html>
