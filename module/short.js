@@ -1,4 +1,5 @@
 const fs = require('fs');
+//const runer = require('../routes/run.js');
 function short(url, number) {
   fs.writeFile(`redirect/${number}.html`, `<!DOCTYPE html>
 <html>
@@ -26,6 +27,7 @@ function short(url, number) {
 </html>`, function (err) {
      if (err) throw err;
      console.log('File is created successfully.');
+     //runer();
   });
 }
 module.exports = short;
