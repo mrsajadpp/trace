@@ -12,7 +12,7 @@ router.post('/', function(req, res, next) {
   if (url.startsWith('http')) {
     rand(url, out);
   } else {
-    rand('http://'+url, out);
+    rand('https://'+url, out);
   }
 });
 
