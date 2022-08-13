@@ -103,35 +103,60 @@ function load(url, th) {
 
 if (location.href === 'http://localhost:3001/') {
     home.classList.add('th');
+    short.classList.add('th');
+    qr.classList.remove('th');
+    capture.classList.remove('th');
+    dev.classList.remove('th');
+    about.classList.remove('th');
     location.href = url;
     localStorage.setItem('url',url);
     localStorage.setItem('th',th);
   } else if (location.href === 'http://localhost:3001/short') {
     home.classList.remove('th');
     short.classList.add('th');
+    qr.classList.remove('th');
+    capture.classList.remove('th');
+    dev.classList.remove('th');
+    about.classList.remove('th');
     location.href = url;
     localStorage.setItem('url',url);
     localStorage.setItem('th',th);
   } else if (location.href === 'http://localhost:3001/qr') {
     home.classList.remove('th');
+    short.classList.add('th');
     qr.classList.add('th');
+    capture.classList.remove('th');
+    dev.classList.remove('th');
+    about.classList.remove('th');
     location.href = url;
     localStorage.setItem('url',url);
     localStorage.setItem('th',th);
   } else if (location.href === 'http://localhost:3001/screen') {
     home.classList.remove('th');
+    short.classList.add('th');
+    qr.classList.add('th');
     capture.classList.add('th');
+    dev.classList.remove('th');
+    about.classList.remove('th');
     location.href = url;
     localStorage.setItem('url',url);
     localStorage.setItem('th',th);
   } else if (location.href === 'http://localhost:3001/dev') {
     home.classList.remove('th');
+    short.classList.add('th');
+    qr.classList.add('th');
+    capture.classList.add('th');
     dev.classList.add('th');
+    about.classList.remove('th');
     location.href = url;
     localStorage.setItem('url',url);
     localStorage.setItem('th',th);
   } else if (location.href === 'http://localhost:3001/about') {
     home.classList.remove('th');
+    short.classList.add('th');
+    qr.classList.add('th');
+    capture.classList.add('th');
+    dev.classList.add('th');
     about.classList.add('th');
     location.href = url;
     localStorage.setItem('url',url);
