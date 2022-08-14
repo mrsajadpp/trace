@@ -33,6 +33,12 @@ function short(express, app, fs, path) {
   }
  });
 }
+function robot(express, app, fs, path) {
+  app.get('/', function(req, res, next) {
+    res.type('text/plain')
+    res.send("User-agent: *\nDisallow: /shorting \nAllow: / \nAllow: /qr \nAllow: /dev \nAllow: /about \nAllow: /screen \nAllow: /short"); 
+  });
+}
 function run(number) {
   app.get('/'+number, (req, res) => {
      res.sendFile(path.join(__dirname, '../redirect/'+number+'.html'));
@@ -42,5 +48,6 @@ module.exports = {
   index,
   short,
   shorting,
-  data
+  data,
+  robot
 }
