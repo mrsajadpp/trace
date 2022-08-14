@@ -101,7 +101,7 @@ function load(url, th) {
   }
 }
 
-if (location.href === 'http://localhost:3001/') {
+if (location.href === 'https://trace.sajadpp.repl.co/') {
     home.classList.add('th');
     short.classList.add('th');
     qr.classList.remove('th');
@@ -111,7 +111,7 @@ if (location.href === 'http://localhost:3001/') {
     location.href = url;
     localStorage.setItem('url',url);
     localStorage.setItem('th',th);
-  } else if (location.href === 'http://localhost:3001/short') {
+  } else if (location.href === 'https://trace.sajadpp.repl.co/short') {
     home.classList.remove('th');
     short.classList.add('th');
     qr.classList.remove('th');
@@ -121,7 +121,7 @@ if (location.href === 'http://localhost:3001/') {
     location.href = url;
     localStorage.setItem('url',url);
     localStorage.setItem('th',th);
-  } else if (location.href === 'http://localhost:3001/qr') {
+  } else if (location.href === 'https://trace.sajadpp.repl.co/qr') {
     home.classList.remove('th');
     short.classList.add('th');
     qr.classList.add('th');
@@ -131,7 +131,7 @@ if (location.href === 'http://localhost:3001/') {
     location.href = url;
     localStorage.setItem('url',url);
     localStorage.setItem('th',th);
-  } else if (location.href === 'http://localhost:3001/screen') {
+  } else if (location.href === 'https://trace.sajadpp.repl.co/screen') {
     home.classList.remove('th');
     short.classList.add('th');
     qr.classList.add('th');
@@ -141,7 +141,7 @@ if (location.href === 'http://localhost:3001/') {
     location.href = url;
     localStorage.setItem('url',url);
     localStorage.setItem('th',th);
-  } else if (location.href === 'http://localhost:3001/dev') {
+  } else if (location.href === 'https://trace.sajadpp.repl.co/dev') {
     home.classList.remove('th');
     short.classList.add('th');
     qr.classList.add('th');
@@ -151,7 +151,7 @@ if (location.href === 'http://localhost:3001/') {
     location.href = url;
     localStorage.setItem('url',url);
     localStorage.setItem('th',th);
-  } else if (location.href === 'http://localhost:3001/about') {
+  } else if (location.href === 'https://trace.sajadpp.repl.co/about') {
     home.classList.remove('th');
     short.classList.add('th');
     qr.classList.add('th');
