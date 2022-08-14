@@ -1,3 +1,2 @@
-const listen = require('./server.js');
-const port = 3000;
-listen(port);
+let { listen } = require('./server.js');
+listen(3000);
