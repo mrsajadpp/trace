@@ -41,7 +41,7 @@ function robot(express, app, fs, path) {
 }
 function sitemap(express, app, fs, path) {
   app.get('/sitemap.xml', function(req, res) {
-    res.sendFile(path.join(__dirname,'/sitemap.xml'));
+    res.sendFile(path.join(__dirname,'../sitemap/sitemap.xml'));
   });
 }
 function run(number) {
