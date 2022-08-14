@@ -17,7 +17,7 @@ function run(number) {
       res.status(200).sendFile(path.join(__dirname, 'redirect/'+number+'.html'));
     });
 }
-const port = 3002;
+const port = 3000;
 listen(port);
 
 module.exports = { 
