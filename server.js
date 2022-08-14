@@ -2,10 +2,12 @@ let express = require('express');
 let { engine }  = require('express-handlebars');
 let app = express();
 let path = require('path');
+const favicon = require('serve-favicon');
 let fs = require('fs');
 let { index, short, shorting, data} = require('./routes/routes.js');
 
 data(app);
+app.use(favicon(path.join(__dirname, 'public', 'images/logo.png')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
