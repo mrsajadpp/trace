@@ -16,7 +16,7 @@ var x = 0;
 function go() {
     run();
     if (x++ < 20) {
-       setTimeout(go, 20000);
+       setTimeout(go, 1000);
     }
 }
 go();
