@@ -33,6 +33,11 @@ function short(express, app, fs, path) {
   }
  });
 }
+function dev() {
+  app.get('/', function(req, res, next) {
+      res.render('dev', { title: 'Developer - Trace', description: 'Trace developer sajad pp.' }); 
+  });
+}
 function robot(express, app, fs, path) {
   app.get('/robots.txt', function(req, res, next) {
     res.type('text/plain')
@@ -55,5 +60,6 @@ module.exports = {
   shorting,
   data,
   robot,
-  sitemap
+  sitemap,
+  dev
 }
