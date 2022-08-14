@@ -34,7 +34,7 @@ function short(express, app, fs, path) {
  });
 }
 function dev(express, app, fs, path) {
-  app.get('/', function(req, res, next) {
+  app.get('/dev', function(req, res, next) {
       res.render('dev', { title: 'Developer - Trace', description: 'Trace developer sajad pp.' }); 
   });
 }
