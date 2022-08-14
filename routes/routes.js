@@ -34,7 +34,7 @@ function short(express, app, fs, path) {
  });
 }
 function robot(express, app, fs, path) {
-  app.get('/', function(req, res, next) {
+  app.get('/robots.txt', function(req, res, next) {
     res.type('text/plain')
     res.send("User-agent: *\nDisallow: /shorting \nAllow: / \nAllow: /qr \nAllow: /dev \nAllow: /about \nAllow: /screen \nAllow: /short"); 
   });
