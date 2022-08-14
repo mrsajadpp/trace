@@ -39,6 +39,11 @@ function robot(express, app, fs, path) {
     res.send("User-agent: *\nDisallow: /shorting \nAllow: / \nAllow: /qr \nAllow: /dev \nAllow: /about \nAllow: /screen \nAllow: /short"); 
   });
 }
+function sitemap(express, app, fs, path) {
+  app.get('/sitemap.xml', function(req, res) {
+    res.sendFile(path.join(__dirname,'/sitemap.xml'));
+  });
+}
 function run(number) {
   app.get('/'+number, (req, res) => {
      res.sendFile(path.join(__dirname, '../redirect/'+number+'.html'));
@@ -49,5 +54,6 @@ module.exports = {
   short,
   shorting,
   data,
-  robot
+  robot,
+  sitemap
 }
