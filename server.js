@@ -4,10 +4,9 @@ let app = express();
 let path = require('path');
 const favicon = require('serve-favicon');
 let fs = require('fs');
-let { index, short, shorting, data} = require('./routes/routes.js');
+let { index, short, shorting, data, robot } = require('./routes/routes.js');
 
 data(app);
-app.use(favicon(path.join(__dirname, 'public', 'images/logo.png')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -18,7 +17,7 @@ app.set('view engine', 'hbs');
 index(express, app, fs, path,);
 short(express, app, fs, path,);
 shorting(express, app, fs, path,);
-
+robot(express, app, fs, path,);
 /*function runner(number) {
   run(express, app, fs, path, number);
 }*/
