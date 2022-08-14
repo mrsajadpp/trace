@@ -1,26 +1,32 @@
-const express = require('express');
+let express = require('express');
+let { engine }  = require('express-handlebars');
 let app = express();
-const fs = require('fs');
-const path = require('path');
-const favicon = require('serve-favicon');
+let path = require('path');
+let fs = require('fs');
+let { index, short, shorting, data} = require('./routes/routes.js');
+
+data(app);
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(favicon(path.join(__dirname, 'public', 'images/logo.png')));
-let codes = require('./redirect/url.js');
+
+app.engine('hbs', engine({defaultLayout: 'main'}));
+app.set('view engine', 'hbs');
+
+index(express, app, fs, path,);
+short(express, app, fs, path,);
+shorting(express, app, fs, path,);
+
+/*function runner(number) {
+  run(express, app, fs, path, number);
+}*/
+
 function listen(port) {
   app.listen(port, () => {
-    console.log('Rediarect running on : '+port);
+    console.log('Server is running on port : '+port);
   });
 }
-//Redirecting 
-function run(number) {
-    app.get('/u/'+number, (req, res) => {
-      res.status(200).sendFile(path.join(__dirname, 'redirect/'+number+'.html'));
-    });
-}
-const port = 3000;
-listen(port);
 
 module.exports = { 
-  listen,
-  run
+  listen
 };
