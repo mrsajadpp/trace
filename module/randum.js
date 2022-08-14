@@ -1,6 +1,7 @@
 const short = require('./short.js');
 const codes = require('../redirect/url.js');
 var { connectDb, insertDb, collDb, findDb } = require('../db.js');
+let { run } = require('../server.js');
 /*let ru = require('../app.js');*/
 
 function rand(url, out) { 
@@ -16,8 +17,8 @@ function rand(url, out) {
       if (codes[i] === number) {
         rand(url, out);
       } else {
-        /*ru.runner(number);*/
-        codes.push(number);
+        run(number);
+        //codes.push(number);
         //insertDb('paths', codes);
         short(url, number);
         out(number);
